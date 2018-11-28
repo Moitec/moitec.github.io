@@ -1,110 +1,113 @@
 <!DOCTYPE html>
-<html ng-app="home">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Educarte - Educação para seu futuro!</title>
   </head>
-  <body  >
-
-  <header ng-controller="capaCtrl">
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper white">
-          <a href="index.html" class="brand-logo grey-text text-darken-2 left">Educarte</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="contato.html" class="grey-text text-darken-2">Contato</a></li>
-              <li><a href="sobre.html" class="grey-text text-darken-2">Sobre</a></li>
-              <li><a href="historia.html" class="grey-text text-darken-2">História</a></li>
-              <li><a href="instalacoes.html" class="grey-text text-darken-2">Instalações</a></li>
-              <li><a class="waves-effect waves-light btn teal lighten-2 modal-trigger" href="#contato"><i class="material-icons left white-text">phone</i>Ligamos para você</a></li>
-            </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div id="contato" class="modal">
-      <div class="modal-content">
-        <form name="cadastroContatoForm" ng-init="contato">
-          <h4 class="center blue-text text-darken-2"><i class="fa fa-whatsapp blue-text text-darken-2"></i> Contato</h4>
-          <p class="grey-text text-lighten-1 center">Esse primeiro contato vai para o nosso WhatsApp.</p>
-          <p class="grey-text text-lighten-1 center">Preencha seus dados, logo ligamos para você ;)</p>
-          <div class="">
-            <div class="input-field col s6">
-              <input id="nome" type="text" class="validate" ng-model="contato.nome" ng-init="contato" ng-required="true">
-              <label for="nome">Nome</label>
+  <body >
+    <header ng-controller="capaCtrl">
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper white">
+            <a href="index.html" class="brand-logo grey-text text-darken-2 center">Educarte</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="contato.html" class="grey-text text-darken-2">Contato</a></li>
+                <li><a href="sobre.html" class="grey-text text-darken-2">Sobre</a></li>
+                <li><a href="historia.html" class="grey-text text-darken-2">História</a></li>
+                <li><a href="instalacoes.html" class="grey-text text-darken-2">Instalações</a></li>
+                <li><a class="waves-effect waves-light btn teal lighten-2 modal-trigger" href="#contato"><i class="material-icons left white-text"></i>Ligamos para você</a></li>
+              </ul>
+          </div>
+        </nav>
+      </div>
+  
+      <div id="contato" class="modal">
+        <div class="modal-content">
+          <form name="cadastroContatoForm" ng-init="contato">
+            <h4 class="center blue-text text-darken-2"><i class="fa fa-whatsapp blue-text text-darken-2"></i> Contato</h4>
+            <p class="grey-text text-lighten-1 center">Esse primeiro contato vai para o nosso WhatsApp.</p>
+            <p class="grey-text text-lighten-1 center">Preencha seus dados, logo ligamos para você ;)</p>
+            <div class="">
+              <div class="input-field col s6">
+                <input id="nome" type="text" class="validate" ng-model="contato.nome" ng-init="contato" ng-required="true">
+                <label for="nome">Nome</label>
+              </div>
+            </div>
+            <div class="">
+              <div class="input-field col s12">
+                <input id="telefone" id='phone_with_ddd' data-mask="(00)0 0000-0000"  type="text" class="validate"  ng-model="contato.telefone" ng-required="true">
+                <label for="telefone">Telefone</label>
+              </div>
             </div>
           </div>
-          <div class="">
-            <div class="input-field col s12">
-              <input id="telefone" id='phone_with_ddd' data-mask="(00)0 0000-0000"  type="text" class="validate"  ng-model="contato.telefone" ng-required="true">
-              <label for="telefone">Telefone</label>
-            </div>
+          <div class="modal-footer center" style="text-align:center">
+            <a class="modal-action modal-close waves-effect waves-light btn blue lighten-2" ng-href="https://api.whatsapp.com/send?phone=5547996474923&text=Ol%C3%A1!%20Eu%20sou%20{{contato.nome}} e gostaria de saber mais sobre a Educarte!" target="_blank" ng-disabled="cadastroContatoForm.$invalid"><i class="material-icons left white-text">send</i>Me ligue</a>
           </div>
-        </div>
-        <div class="modal-footer center" style="text-align:center">
-          <a class="modal-action modal-close waves-effect waves-light btn blue lighten-2" ng-href="https://api.whatsapp.com/send?phone=5547996474923&text=Ol%C3%A1!%20Eu%20sou%20{{contato.nome}} e gostaria de saber mais sobre a Educarte!" target="_blank" ng-disabled="cadastroContatoForm.$invalid"><i class="material-icons left white-text">send</i>Me ligue</a>
-        </div>
-      </form>
-
-    </div>
-  </header>
-
-
-  <div class="parallax-container">
-    <div class="parallax"><img src="img/parallax-logo.png"></div>
-  </div>
-
-  <div class="container">
-    <h3 class="grey-text text-darken-3 center">Em breve o lançamento do site!</h3>
-    <h5 class="grey-text text-darken-3 center">Se você tem interesse em entrar em contato conosco clique em WhatsApp, estaremos lhe esperando!</h5>
-    <a href="https://wa.me/5547996474923?text=Olá gostaria de saber mais sobre a Educarte!"><h4 class="grey-text text-darken-3 center"><i class="fa fa-whatsapp green-text" aria-hidden="true"></i> WhatsApp</h4></a>
-
-  </div>
-
-  <footer class="page-footer teal ligthen-2">
+        </form>
+  
+      </div>
+    </header>
+  
+  
+  
+    <div class="parallax-container">
+        <div class="parallax"><img src="img/parallax-logo.png"></div>
+      </div>
+    
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
+        <h3 class="grey-text text-darken-3 center">Em breve o lançamento do site!</h3>
+        <h5 class="grey-text text-darken-3 center">Se você tem interesse em entrar em contato conosco clique em WhatsApp, estaremos lhe esperando!</h5>
+        <a href="https://wa.me/5547996474923?text=Olá gostaria de saber mais sobre a Educarte!"><h4 class="grey-text text-darken-3 center"><i class="fa fa-whatsapp green-text" aria-hidden="true"></i> WhatsApp</h4></a>
+    
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2018 Copyright MOITEC PRODUTOS & SOLUÇÕES.
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-      </div>
-    </footer>
-
-  </body>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/materialize.min.js"/></script>
-  <script src="js/jquery.mask.min.js"></script>
-
-  <script src="js/angularjs/angular.min.js"/></script>
-  <script src="js/angularjs/angular-home.js"/></script>
-  <script>
-    $(document).ready(function(){
-      $('.parallax').parallax();
-      $('.modal').modal({
-        dismissible: true, // Modal can be dismissed by clicking outside of the modal
-        opacity: .5, // Opacity of modal background
-      });
-    });
-  </script>
-</html>
+    
+     
+    
+      
+    
+      <footer class="page-footer teal ligthen-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Agradecemos por confiar o maior bem de suas vidas, a nós!</h5>
+                <p class="grey-text text-lighten-4">Pedimos desculpas pelo transtorno gerado durante a construção do site, porém, estamos aqui para fazer o melhor que podemos, com aquilo que tempos!.</p>
+              </div>
+              <div id="instafeed"></div>
+      
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+              <script src="./js/instafeed.min.js"></script>
+              <script src="./js/instafeed.min.js"></script>
+            
+           
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 Copyright MOITEC PRODUTOS & SOLUÇÕES.
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+    
+    
+    
+      </body>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/materialize.min.js"/></script>
+      <script src="js/jquery.mask.min.js"></script>
+    
+      <script src="js/angularjs/angular.min.js"/></script>
+      <script src="js/angularjs/angular-home.js"/></script>
+      <script>
+        $(document).ready(function(){
+          $('.parallax').parallax();
+          $('.modal').modal({
+            dismissible: true, // Modal can be dismissed by clicking outside of the modal
+            opacity: .5, // Opacity of modal background
+          });
+        });
+      </script>
+    </html>
+    
